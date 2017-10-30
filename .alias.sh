@@ -40,9 +40,9 @@ function mdn {
 }
 
 function safemerge {
-	git merge --no-commit --no-ff $1
-	git checkout HEAD deploy.sh .circleci/
-	git merge --continue
+ git merge --no-commit --no-ff $1
+ git checkout HEAD deploy.sh .circleci/ config/
+ git merge --continue
 }
 
 # $1 - Ambiente (dev, stage, fin)
