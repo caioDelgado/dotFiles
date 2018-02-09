@@ -14,6 +14,9 @@ alias systop="systemctl stop"
 alias systart="systemctl start"
 alias knock="sudo fuser -v"
 
+##Torrent
+alias torrent="transmission-daemon -c /home/cdelgado/Torrents/TorrentsWatch"
+
 ## Git
 alias ginit="cp ~/.gitignore . && git init"
 alias unstage="git reset HEAD"
