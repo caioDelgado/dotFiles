@@ -1,6 +1,6 @@
 ## Aliases
 alias getme="sudo pacman -S --noconfirm"
-alias yo="yaourt -S --noconfirm"
+## alias yo="yaourt -S --noconfirm"
 alias reload!="source ~/.zshrc && echo 'ZSH reloaded'"
 alias czsh="nano ~/.zshrc"
 alias projects="cd ~/Projects"
