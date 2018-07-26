@@ -74,7 +74,7 @@ function mongodown {
 
 	echo "Backing '$DOWN_ORIGIN' up to '$DOWN_DEST'"
 	mongodump -h $DOWN_HOST -o $DOWN_DEST
-	echo "Done!"
+	echo "codingmodeDone!"
 }
 
 # $1 - Data (dd-mm-yyyy)
@@ -133,3 +133,30 @@ function mongosync {
 	mongoup $DATE $SYNC_ORIGIN $SYNC_DEST
 	echo "Synced! :D"
 }
+
+function codingmode {
+	TOUCHPAD="DELL0740:00 06CB:7E7E Touchpad"
+	SETTING="libinput Disable While Typing Enabled"
+
+	enable() {
+		xinput --set-prop "${TOUCHPAD}" "${SETTING}" 1
+		echo "Touchpad disabled while typing"
+	}
+
+	disable() {
+		xinput --set-prop "${TOUCHPAD}" "${SETTING}" 0
+		echo "Touchpad enabled while typing"
+	}
+
+	case "$1" in
+		enable|e)
+			enable
+			;;
+
+		disable|d)
+			disable
+			;;
+	esac
+}
+# Default enabled codingmode
+codingmode e
