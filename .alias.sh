@@ -13,6 +13,7 @@ alias pig="ping google.com"
 alias systop="systemctl stop"
 alias systart="systemctl start"
 alias knock="sudo fuser -v"
+alias myip="dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 
 ##Torrent
 alias torrent="transmission-daemon -c /home/cdelgado/Torrents/TorrentsWatch"
