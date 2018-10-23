@@ -15,6 +15,11 @@ alias systart="systemctl start"
 alias knock="sudo fuser -v"
 alias myip="dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 
+## HDMI 4k
+## xrandr --newmode '2560x1440R' 241.50  2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync
+## xrandr --addmode HDMI1 2560x1440R
+alias 4k="xrandr --output HDMI1 --mode 2560x1440R"
+
 ##Torrent
 alias torrent="transmission-daemon -c /home/cdelgado/Torrents/TorrentsWatch"
 
@@ -159,5 +164,12 @@ function codingmode {
 			;;
 	esac
 }
+
+# Enabled 4k resolution
+function enabled4k {
+	xrandr --newmode '2560x1440R' 241.50  2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync
+	xrandr --addmode HDMI1 2560x1440R
+}
+
 # Default enabled codingmode
 codingmode e
