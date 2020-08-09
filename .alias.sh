@@ -15,6 +15,12 @@ alias systart="systemctl start"
 alias knock="sudo fuser -v"
 alias myip="dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 
+## K8s
+alias bb="kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --" 
+alias ktoken="kubectl -n kube-system describe secrets \
+   `kubectl -n kube-system get secrets | awk '/clusterrole-aggregation-controller/ {print $1}'` \
+   | awk '/token:/ {print $2}'"
+
 ## HDMI 4k
 ## xrandr --newmode '2560x1440R' 241.50  2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync
 ## xrandr --addmode HDMI1 2560x1440R
@@ -166,10 +172,10 @@ function codingmode {
 }
 
 # Enabled 4k resolution
-function enabled4k {
-	xrandr --newmode '2560x1440R' 241.50  2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync
-	xrandr --addmode HDMI1 2560x1440R
-}
+# function enabled4k {
+# 	xrandr --newmode '2560x1440R' 241.50  2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync
+# 	xrandr --addmode HDMI1 2560x1440R
+# }
 
 # Default enabled codingmode
-codingmode e
+# codingmode e
